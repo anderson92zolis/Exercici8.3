@@ -2,11 +2,13 @@
 public class Cuentas{
     private int balance;  // Create a class attribute
     private int numeroCuenta;
+    private static int cuentaSiguiente=1000;
   
     // Create a class constructor for the Cuenta class
-    public Cuentas(int balance, int numeroCuenta) {
-        this.balance=balance;  // Set the initial value for the class attribute balance, numeroCuenta
-        this.numeroCuenta=numeroCuenta;
+    public Cuentas() {
+        balance=0;  // Set the initial value for the class attribute balance, numeroCuenta
+        numeroCuenta=cuentaSiguiente;
+        cuentaSiguiente++;
     }
 
     // getter 
@@ -36,7 +38,12 @@ public class Cuentas{
     }
 
     public void retirar(int cantidad){
-        balance-=cantidad;
+        if (balance>cantidad){
+            balance-=cantidad;
+            System.out.println("The new BALANCE IS: "+ balance);
+        } else {
+            System.out.println("The amount of money to withdrawals is suporior to balance: "+ balance);
+        }
     }
 
     public String toString(){

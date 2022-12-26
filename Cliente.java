@@ -43,7 +43,7 @@ public class Cliente {
 
     //Methods
 
-    public int verficaCuenta(int cuenta){
+    public int verificaCuenta(int cuenta){
         int indexCuenta=0;
         int encuentraIndexCuenta= -1;
         while (indexCuenta < arrayListNumerosDeCuentas.size() && encuentraIndexCuenta ==-1 ){
